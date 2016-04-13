@@ -2,22 +2,32 @@
 <html>
 	<head>
 		<title></title>
+		<link href='bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+		<link href='css/main.css' rel='stylesheet'>
 	</head>
 	<body>
-		<input type="search" id='artist_search' placeholder='Enter an artist name'>
-		<input type="button" id='submit_search' value="Gen" />
+		<div class='container container-table'>
+			<div class='row vertical-center-row'>
+				<div id='centered-container'>
+					<input type="search" id='artist_search' placeholder='Enter an artist name'>
+					<input type="hidden" id='submit_search' value="Gen" />
 
-		<ul id='vid_list'></ul>
-
-		<div id='video_container'></div>
+					<div id='video_container' class='hidden'></div>
+					<ul id='vid_list' class='hidden'></ul>
+				</div>
+			</div>
+		</div>
 	</body>
 
-	<footer>
+<!--	<footer>
+		<script type="text/javascript" src='https://www.youtube.com/iframe_api'></script>
 		<script type="text/javascript" src='js/helpers.js'></script>
-		<script type="text/javascript" src='js/request.js'></script>		
+		<script type="text/javascript" src='js/request.js'></script>
 		<script type="text/javascript" src='js/youtube.js'></script>
+		<script type="text/javascript" src='js/vimeo.js'></script>
 		<script type="text/javascript" src='js/video.js'></script>
 		<script type="text/javascript" src='js/imvdb.js'></script>
+		<script type="text/javascript" src='js/test.js'></script>
 		<script type="text/javascript" src='js/main.js'></script>
-	</footer>
+	</footer> -->
 </html>

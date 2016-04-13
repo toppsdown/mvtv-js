@@ -1,0 +1,32 @@
+html,
+body,
+.container,
+.container-table,
+.vertical-center-row {
+  border: 1px solid #000;
+}
+
+
+html, body, .container {
+  height: 100%;
+  width: 100%;
+}
+
+.container-table {
+  display: table;
+  vertical-align: middle;
+}
+
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#centered-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+#centered-container input {
+  width: 100%;
+}

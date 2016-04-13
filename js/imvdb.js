@@ -17,7 +17,10 @@ function getVidsForId(id) {
 
   var handleVidResponse = function(response){
     response.sources.map(function(source){
-      playlist.push(newVideo(source));
+      var vid = newVideo(source);
+      if (vid.embeddable()) {
+        playlist.push(vid);
+      }
     });
   };
 
