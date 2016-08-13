@@ -1,8 +1,5 @@
 document.getElementById('submit_search').addEventListener('click', submitSearch, false);
 
-var apiKey = 'YkSfkAE6iqCb2NCzhzKMtKYevSh2XtEWNwb77Qeq' ;
-
-
 var library = new Library();
 library.search('pinback');
 // playlist = new Playlist();
