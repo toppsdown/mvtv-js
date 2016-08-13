@@ -1,10 +1,16 @@
-document.getElementById('submit_search').addEventListener('click', submitSearch, false);
 
+
+// Initialize the State of the page
+var domManager = new DomManager();
 var library = new Library();
-library.search('pinback');
-
 var playlist = new Playlist();
 
+// Initiatlize the event bindings
+function bindSubmitSearch(){
+  domManager.addEventListener('click', submitSearch, false);
+}
+
+// Define the functions for the page
 function submitSearch() {
 	var artist = document.getElementById('artist_search').value;
   // library.search(artist);
@@ -12,6 +18,16 @@ function submitSearch() {
 }
 
 function queueVideo(){
-  playlist.add_to_queue(library.pickVideo());
-  return playlist.queue;
+  var vid = library.pickVideo();
+  if (vid){
+    playlist.add_to_queue(vid);
+    domManager.appendToVidList(vid);
+  }
 }
+
+
+
+
+// Just for testing:
+library.search('pinback');
+
