@@ -1,20 +1,31 @@
 // This sets the stage for the full project
 // but I want to get the basics working first
 
-function Library(artistSearch) {
-  // get recommended artists for this artist
-  // create a new artist object for each
-  // that will delegate the async requests to fill out the data
-  // someone needs to notify the library to start playing videos, not sure who does that
-  this.artists = [];
+function Library() {
+  // Initialize
+    // Execute search
+    // Generate artist list
 
-  this.populate = function() {};
-  this.pick = function(quantity) {};
+  this.artistList = [];
+
+  this.search = function(query) {
+    new Imvdb(this).queryVideos(query);
+  };
+
+  this.storeResults = function(results){
+    var artist = new Artist(results.artistName);
+    artist.videoIds.push(results.videoIds);
+    this.artistList.push(artist);
+  };
+
+
+  // Random pick
+
 }
 
 function Artist(name) {
     this.name = name;
-    this.videos = [];
+    this.videoIds = [];
 
   // make request for vid list
   // create a vid object for each
@@ -23,7 +34,6 @@ function Artist(name) {
 
 function Video(imvdbId) {
   // make the request for video information
-  // when completed, notify the library to start playing
 }
 
 
