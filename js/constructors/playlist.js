@@ -4,7 +4,9 @@ function Playlist() {
   this.now_playing = null;
 
   this.add_to_queue = function(video) {
-    this.queue.push(video);
+    if (video) {
+      this.queue.push(video);
+    }
   };
 
   this.play_next = function() {

@@ -14,18 +14,36 @@ function Library() {
 
   this.storeResults = function(results){
     var artist = new Artist(results.artistName);
-    artist.videoIds.push(results.videoIds);
+    artist.videoIds = artist.videoIds.concat(results.videoIds);
     this.artistList.push(artist);
   };
 
-
-  // Random pick
-
+  this.pickVideo = function(){
+    var artist = this.artistList[0];
+    if (artist) {
+      return artist.pickVideo();
+    } else {
+      console.log('ERROR: NO ARTISTS AVAILABLE');
+      return null;
+    }
+  };
 }
 
 function Artist(name) {
     this.name = name;
     this.videoIds = [];
+    this.usedIds = [];
+
+    this.pickVideo = function(){
+      var retId = this.videoIds.pop();
+      if (retId){
+        this.usedIds.push(retId);
+        return retId;
+      } else {
+        console.log('Artist \'{name}\' has no more videos'.supplant({name: this.name}));
+        return null;
+      }
+    };
 
   // make request for vid list
   // create a vid object for each
