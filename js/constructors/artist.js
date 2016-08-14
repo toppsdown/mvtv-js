@@ -22,7 +22,7 @@ function Artist(name) {
   };
 
   this.pickVideo = function(){
-    var retVid = this.availableVideos.pop();
+    var retVid = this.availableVideos.popRandom();
     if (retVid){
       vidObject = new Video(retVid);
       vidObject.queryDetails();

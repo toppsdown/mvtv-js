@@ -8,4 +8,6 @@ function DomManager(){
   };
 
   this.searchButton = document.getElementById('submit_search');
+
+  this.addToQueue = document.getElementById('add_to_queue');
 }

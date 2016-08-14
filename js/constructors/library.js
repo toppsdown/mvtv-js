@@ -28,7 +28,7 @@ function Library() {
   };
 
   this.pickVideo = function(){
-    var artist = this.artistList[0];
+    var artist = this.artistList.random();
     if (artist) {
       return artist.pickVideo();
     } else {

@@ -5,10 +5,17 @@ var domManager = new DomManager();
 var library = new Library();
 var playlist = new Playlist();
 
-// Initiatlize the event bindings
+// Define the event bindings
 function bindSubmitSearch(){
-  domManager.addEventListener('click', submitSearch, false);
+  domManager.searchButton.addEventListener('click', submitSearch, false);
 }
+
+function bindAddToQueue(){
+  domManager.addToQueue.addEventListener('click', queueVideo, false);
+}
+
+bindSubmitSearch();
+bindAddToQueue();
 
 // Define the functions for the page
 function submitSearch() {
@@ -23,9 +30,6 @@ function queueVideo(){
     domManager.appendToVidList(vid.name);
   }
 }
-
-
-
 
 // Just for testing:
 library.search('pinback');
