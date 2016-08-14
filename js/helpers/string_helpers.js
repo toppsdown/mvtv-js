@@ -7,4 +7,3 @@ String.prototype.supplant = function (o) {
     }
   );
 };
-
