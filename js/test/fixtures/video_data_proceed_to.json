@@ -1,0 +1,39 @@
+{
+    "id": 482679166338,
+    "production_status": "r",
+    "song_title": "Proceed To Memor",
+    "song_slug": "proceed-to-memor",
+    "url": "https:\/\/imvdb.com\/video\/pinback\/proceed-to-memor",
+    "multiple_versions": false,
+    "version_name": null,
+    "version_number": 1,
+    "is_imvdb_pick": false,
+    "aspect_ratio": null,
+    "year": 2013,
+    "verified_credits": false,
+    "artists": [
+        {
+            "name": "Pinback",
+            "slug": "pinback",
+            "url": "https:\/\/imvdb.com\/n\/pinback"
+        }
+    ],
+    "image": {
+        "o": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_ov.jpg",
+        "l": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_lv.jpg",
+        "b": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_bv.jpg",
+        "t": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_tv.jpg",
+        "s": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_sv.jpg"
+    },
+    "sources": [
+        {
+            "source": "youtube",
+            "source_slug": "youtube",
+            "source_data": "2cLdxrof_mg",
+            "is_primary": true
+        }
+    ],
+    "directors": [],
+    "release_date_stamp": 1358121600,
+    "release_date_string": "January 14, 2013"
+}
