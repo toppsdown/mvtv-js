@@ -1,3 +1,4 @@
+// String dynamic replacement
 String.prototype.supplant = function (o) {
   return this.replace(/{([^{}]*)}/g,
     function (a, b) {
@@ -6,3 +7,4 @@ String.prototype.supplant = function (o) {
     }
   );
 };
+
