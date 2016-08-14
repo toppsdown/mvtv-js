@@ -7,24 +7,23 @@ function Imvdb(storageObject){
     var artistSearchUrl = [baseUrl, 'search', 'videos'].join('/') + formatParams({q: query});
     var response;
 
-    httpGetAsync(artistSearchUrl, this.parseVideoQueryResponse);
+    httpGetAsync(artistSearchUrl, this.parseSearchQueryResponse);
   };
 
-  this.parseVideoQueryResponse = function(response){
-    var results = response.results;
-    var artist = results[0].artists[0].name;
-    var vidIds = results.map(function(result){
-      return result.id;
-    });
-
-    var simplifiedResponse = {
-      artistName: artist,
-      videoIds: vidIds
-    };
-
-    storageObject.storeResults(simplifiedResponse);
+  this.parseSearchQueryResponse = function(response){
+    storageObject.parseResponse(response);
   };
-}
+
+  this.getVideoDetails = function(id){
+    var url = [baseUrl, 'video', id].join('/') + formatParams({'include': 'sources'});
+
+    httpGetAsync(url, this.parseVideoDetailsResponse);
+  };
+
+  this.parseVideoDetailsResponse = function(response){
+    storageObject.parseResponse(response);
+  };
+};
 
 
 function searchImvdb(artist) {

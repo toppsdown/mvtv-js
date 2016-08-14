@@ -13,15 +13,14 @@ function bindSubmitSearch(){
 // Define the functions for the page
 function submitSearch() {
 	var artist = document.getElementById('artist_search').value;
-  // library.search(artist);
-  library.search(pinback);
+  library.search(artist);
 }
 
 function queueVideo(){
   var vid = library.pickVideo();
   if (vid){
     playlist.add_to_queue(vid);
-    domManager.appendToVidList(vid);
+    domManager.appendToVidList(vid.name);
   }
 }
 
