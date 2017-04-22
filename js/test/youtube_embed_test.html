@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+    <div id="player"></div>
+  </body>
+
+  <script type="text/javascript">
+
+    var list_of_youtube_videos = [
+      '6e-sCFZlM1s',
+      'q0DrsrADuJo',
+      'esgLYzVAY6I'
+    ];
+
+    function convert_to_url(vid_id){
+      return 'http://www.youtube.com/embed/' + vid_id; // + '?autoplay=1';
+    }
+
+    // Following code copied from:
+    // https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player
+
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: list_of_youtube_videos.shift(),
+        events: {
+          'onReady': function(event){
+            event.target.playVideo();
+          },
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event){
+      if (event.data == YT.PlayerState.ENDED) {
+        player.loadVideoById(list_of_youtube_videos.shift());
+      }
+    }
+  </script>
+</html>
+
