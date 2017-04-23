@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+
+  </body>
+
+  <script type="text/javascript">
+    // http://imvdb.com/api/v1/video/727989061887?include=sources
+    var videoInfo = {
+      "id": 727989061887,
+      "production_status": "r",
+      "song_title": "Sediment",
+      "song_slug": "sediment",
+      "url": "https:\/\/imvdb.com\/video\/pinback\/sediment",
+      "multiple_versions": false,
+      "version_name": null,
+      "version_number": 1,
+      "is_imvdb_pick": false,
+      "aspect_ratio": null,
+      "year": 2013,
+      "verified_credits": false,
+      "artists": [
+          {
+              "name": "Pinback",
+              "slug": "pinback",
+              "url": "https:\/\/imvdb.com\/n\/pinback"
+          }
+      ],
+      "image": {
+          "o": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_ov.jpg?v=2",
+          "l": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_lv.jpg?v=2",
+          "b": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_bv.jpg?v=2",
+          "t": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_tv.jpg?v=2",
+          "s": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_sv.jpg?v=2"
+      },
+      "sources": [
+          {
+              "source": "youtube",
+              "source_slug": "youtube",
+              "source_data": "AMAsesWBgmM",
+              "is_primary": true
+          }
+      ],
+      "directors": [
+          {
+              "position_name": "Director",
+              "position_code": "dir",
+              "entity_name": "Michael Foxtrot Johnson",
+              "entity_slug": "michael-foxtrot-johnson",
+              "entity_id": 57754,
+              "position_notes": null,
+              "position_id": 57754,
+              "entity_url": "https:\/\/imvdb.com\/n\/michael-foxtrot-johnson"
+          }
+      ],
+      "release_date_stamp": 1377043200,
+      "release_date_string": "August 21, 2013"
+    }
+
+    function parseResponse(response){
+      // Check for youtube
+      // Select the primary one if it is youtube
+      youtubeSource = response.sources.find(function(sourceRecord){
+        return sourceRecord.source === 'youtube';
+      })
+
+      // TODO: handle case where no youtube sometimes here
+
+      return youtubeSource.source_data;
+    }
+
+    function insertVidId(vidId){
+      var artistSection = document.createElement('div');
+      artistSection.appendChild(document.createTextNode(vidId));
+
+      var body = document.getElementsByTagName('body')[0];
+      body.appendChild(artistSection);
+    }
+
+    insertVidId(parseResponse(videoInfo));
+
+  </script>
+</html>
+
