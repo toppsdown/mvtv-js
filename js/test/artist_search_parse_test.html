@@ -157,17 +157,16 @@
     }
 
     function displayArtistVideos(artistObject){
-      var artistName = artistObject.artistName;
-
       var body = document.getElementsByTagName('body')[0];
+      artistSection = buildArtistSection(artistObject);
+      body.appendChild(artistSection);
+    }
 
+    function buildArtistSection(artistObject){
       var artistSection = document.createElement('div');
       artistSection.className = 'artistSection';
-      body.appendChild(artistSection);
 
-      var header = document.createElement('h1');
-      var headerText = document.createTextNode(artistName);
-      header.appendChild(headerText);
+      header = buildHeader(artistObject.artistName);
       artistSection.appendChild(header);
 
       var videoList = document.createElement('ul');
@@ -176,6 +175,15 @@
       artistObject.videos.forEach(function(item){
         appendToList(videoList, displayVidInfo(item));
       })
+
+      return artistSection;
+    }
+
+    function buildHeader(artistName){
+      var header = document.createElement('h1');
+      var headerText = document.createTextNode(artistName);
+      header.appendChild(headerText);
+      return header;
     }
 
     function displayVidInfo(vidInfo){
