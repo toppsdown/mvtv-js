@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <script type="text/javascript" src='test_helper.js'></script>
   </head>
 
   <body>
@@ -9,126 +9,7 @@
   </body>
 
   <script type="text/javascript">
-    var artistSearchResponse = {
-      "total_results": 4,
-      "current_page": 1,
-      "per_page": 25,
-      "total_pages": 1,
-      "results": [
-        {
-          "id": 727989061887,
-          "production_status": "r",
-          "song_title": "Sediment",
-          "song_slug": "sediment",
-          "url": "https:\/\/imvdb.com\/video\/pinback\/sediment",
-          "multiple_versions": false,
-          "version_name": null,
-          "version_number": 1,
-          "is_imvdb_pick": false,
-          "aspect_ratio": null,
-          "year": 2013,
-          "verified_credits": false,
-          "artists": [
-            {
-              "name": "Pinback",
-              "slug": "pinback",
-              "url": "https:\/\/imvdb.com\/n\/pinback"
-            }
-          ],
-          "image": {
-            "o": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_ov.jpg?v=2",
-            "l": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_lv.jpg?v=2",
-            "b": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_bv.jpg?v=2",
-            "t": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_tv.jpg?v=2",
-            "s": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/727989061887-pinback-sediment_music_video_sv.jpg?v=2"
-          }
-        },
-        {
-          "id": 220668264097,
-          "production_status": "r",
-          "song_title": "Fortress",
-          "song_slug": "fortress",
-          "url": "https:\/\/imvdb.com\/video\/pinback\/fortress",
-          "multiple_versions": false,
-          "version_name": null,
-          "version_number": 1,
-          "is_imvdb_pick": false,
-          "aspect_ratio": null,
-          "year": null,
-          "verified_credits": false,
-          "artists": [
-            {
-              "name": "Pinback",
-              "slug": "pinback",
-              "url": "https:\/\/imvdb.com\/n\/pinback"
-            }
-          ],
-          "image": {
-            "o": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/220668264097-pinback-fortress_music_video_ov.jpg",
-            "l": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/220668264097-pinback-fortress_music_video_lv.jpg",
-            "b": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/220668264097-pinback-fortress_music_video_bv.jpg",
-            "t": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/220668264097-pinback-fortress_music_video_tv.jpg",
-            "s": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/220668264097-pinback-fortress_music_video_sv.jpg"
-          }
-        },
-        {
-          "id": 108847584944,
-          "production_status": "r",
-          "song_title": "Sherman",
-          "song_slug": "sherman",
-          "url": "https:\/\/imvdb.com\/video\/pinback\/sherman",
-          "multiple_versions": false,
-          "version_name": null,
-          "version_number": 1,
-          "is_imvdb_pick": false,
-          "aspect_ratio": null,
-          "year": null,
-          "verified_credits": false,
-          "artists": [
-            {
-              "name": "Pinback",
-              "slug": "pinback",
-              "url": "https:\/\/imvdb.com\/n\/pinback"
-            }
-          ],
-          "image": {
-            "o": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/108847584944-pinback-sherman_music_video_ov.jpg?v=2",
-            "l": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/108847584944-pinback-sherman_music_video_lv.jpg?v=2",
-            "b": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/108847584944-pinback-sherman_music_video_bv.jpg?v=2",
-            "t": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/108847584944-pinback-sherman_music_video_tv.jpg?v=2",
-            "s": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/108847584944-pinback-sherman_music_video_sv.jpg?v=2"
-          }
-        },
-        {
-          "id": 482679166338,
-          "production_status": "r",
-          "song_title": "Proceed To Memor",
-          "song_slug": "proceed-to-memor",
-          "url": "https:\/\/imvdb.com\/video\/pinback\/proceed-to-memor",
-          "multiple_versions": false,
-          "version_name": null,
-          "version_number": 1,
-          "is_imvdb_pick": false,
-          "aspect_ratio": null,
-          "year": 2013,
-          "verified_credits": false,
-          "artists": [
-            {
-              "name": "Pinback",
-              "slug": "pinback",
-              "url": "https:\/\/imvdb.com\/n\/pinback"
-            }
-          ],
-          "image": {
-            "o": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_ov.jpg",
-            "l": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_lv.jpg",
-            "b": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_bv.jpg",
-            "t": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_tv.jpg",
-            "s": "https:\/\/s3.amazonaws.com\/images.imvdb.com\/video\/482679166338-pinback-proceed-to-memor_music_video_sv.jpg"
-          }
-        }
-      ]
-    }
+    var artistSearchResponse = loadJSON('./fixtures/pinback_artist_search.json')
 
     function parseResponse(response) {
       var results = response.results;
