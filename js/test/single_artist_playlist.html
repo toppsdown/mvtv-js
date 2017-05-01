@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src='test_helper.js'></script>
+    <script type="text/javascript" src='../temp_code/imvdb.js'></script>
+    <script type="text/javascript" src='../temp_code/dom_manager.js'></script>
+    <script type="text/javascript" src='../temp_code/youtube.js'></script>
+  </head>
+
+  <body>
+    <div class='playlist'></div>
+    <div id='vidframe'></div>
+  </body>
+
+  <script type="text/javascript">
+    var player;
+
+    var responseData;
+    var playlist = [];
+
+    function refreshPlaylist(){
+
+    }
+
+    function formatVideoText(vidStruct){
+      return [vidStruct.id, vidStruct.artist, vidStruct.name].join(' - ');
+    }
+
+    function videoSearchCallback(response){
+      vidStruct = parseVideoResponse(response);
+
+      // Find the entry on the page and add the url
+      playlistItem = document.getElementById(vidStruct.id);
+      playlistItem.textContent = formatVideoText(vidStruct);
+
+      playlist.push(vidStruct);
+      if (!player) {
+        loadYoutube();
+      }
+    }
+
+    // parse artist response
+    function artistSearchCallback(response){
+      // Insert artist name and video id list into the page
+      responseData = response;
+      var artistVidList = parseArtistResponse(response);
+      displayVideos(artistVidList);
+
+      getAllVidInfo(artistVidList, videoSearchCallback);
+
+    }
+
+    // request to imvdb for artist
+    var artistJson = getArtistInfo(artistSearchCallback);
+
+
+
+
+    // request to imvdb for first video
+    // initialize youtube with video
+    // request for rest of videos and queue them
+  </script>
+</html>
+
